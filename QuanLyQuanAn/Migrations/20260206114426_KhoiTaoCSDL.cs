@@ -127,21 +127,21 @@ namespace QuanLyQuanAn.Migrations
                     HinhAnh = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MoTa = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DanhMucId = table.Column<int>(type: "int", nullable: false),
-                    DonViTinhId = table.Column<int>(type: "int", nullable: false)
+                    DanhMucID = table.Column<int>(type: "int", nullable: false),
+                    DonViTinhID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ThucAn", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_ThucAn_DanhMuc_DanhMucId",
-                        column: x => x.DanhMucId,
+                        name: "FK_ThucAn_DanhMuc_DanhMucID",
+                        column: x => x.DanhMucID,
                         principalTable: "DanhMuc",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ThucAn_DonViTinh_DonViTinhId",
-                        column: x => x.DonViTinhId,
+                        name: "FK_ThucAn_DonViTinh_DonViTinhID",
+                        column: x => x.DonViTinhID,
                         principalTable: "DonViTinh",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -313,14 +313,14 @@ namespace QuanLyQuanAn.Migrations
                 column: "PhieuNhapKhoID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ThucAn_DanhMucId",
+                name: "IX_ThucAn_DanhMucID",
                 table: "ThucAn",
-                column: "DanhMucId");
+                column: "DanhMucID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ThucAn_DonViTinhId",
+                name: "IX_ThucAn_DonViTinhID",
                 table: "ThucAn",
-                column: "DonViTinhId");
+                column: "DonViTinhID");
         }
 
         /// <inheritdoc />

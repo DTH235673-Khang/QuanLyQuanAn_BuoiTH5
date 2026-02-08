@@ -12,7 +12,7 @@ using QuanLyQuanAn.Data;
 namespace QuanLyQuanAn.Migrations
 {
     [DbContext(typeof(QLQADbContext))]
-    [Migration("20260125120216_KhoiTaoCSDL")]
+    [Migration("20260206114426_KhoiTaoCSDL")]
     partial class KhoiTaoCSDL
     {
         /// <inheritdoc />
@@ -324,10 +324,10 @@ namespace QuanLyQuanAn.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("DanhMucId")
+                    b.Property<int>("DanhMucID")
                         .HasColumnType("int");
 
-                    b.Property<int>("DonViTinhId")
+                    b.Property<int>("DonViTinhID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Gia")
@@ -349,9 +349,9 @@ namespace QuanLyQuanAn.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("DanhMucId");
+                    b.HasIndex("DanhMucID");
 
-                    b.HasIndex("DonViTinhId");
+                    b.HasIndex("DonViTinhID");
 
                     b.ToTable("ThucAn");
                 });
@@ -444,13 +444,13 @@ namespace QuanLyQuanAn.Migrations
                 {
                     b.HasOne("QuanLyQuanAn.Data.DanhMuc", "DanhMuc")
                         .WithMany("ThucAn")
-                        .HasForeignKey("DanhMucId")
+                        .HasForeignKey("DanhMucID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("QuanLyQuanAn.Data.DonViTinh", "DonViTinh")
                         .WithMany("ThucAn")
-                        .HasForeignKey("DonViTinhId")
+                        .HasForeignKey("DonViTinhID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
