@@ -131,11 +131,8 @@ namespace QuanLyQuanAn.Migrations
                     b.Property<int>("HoaDonID")
                         .HasColumnType("int");
 
-                    b.Property<int>("SanPhamID")
+                    b.Property<int>("SoLuongBan")
                         .HasColumnType("int");
-
-                    b.Property<short>("SoLuongBan")
-                        .HasColumnType("smallint");
 
                     b.Property<int>("ThucAnID")
                         .HasColumnType("int");
